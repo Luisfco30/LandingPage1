@@ -1,0 +1,41 @@
+.logo {
+    height: 50px;
+}
+.imgs {
+    height: 100%;
+    max-height: 300px;
+    max-width: 100%;
+    overflow: hidden;
+}
+.pie > div {
+    background-color: rgb(229, 232, 235);
+    margin-top: 1em;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+.iconos {
+    display: flex !important;
+}
+.navbar {
+    position: fixed !important;
+    z-index: 10;
+    left: 0;
+    right: 0;
+}
+.redes {
+    font-size: 2em;
+    color: rgb(193, 88, 69);
+}
+.modulos >a, .modulos{
+    color: rgb(175, 62, 62);
+}
+
+.modulos >a:hover{
+    color: rgb(125, 20, 20);
+}
