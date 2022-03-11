@@ -1,29 +1,30 @@
-function initMap() {
-    let latitude
-    let longitude
-    navigator.geolocation.getCurrentPosition(x => {
-        latitude = x.coords.latitude.toString()
-        longitude = x.coords.longitude.toString()
-    })
-    const uluru = { lat:latitude, lng:longitude };
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(initMap);
+    }
+}
+function initMap(posicion) {
+    getLocation()
+    console.log(posicion);
+    const ubi = { lat: posicion.coords.latitude, lng: posicion.coords.longitude };
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: uluru,
+        zoom: 15,
+        center: ubi,
     });
     const contentString =
         '<div id="content">' +
         '<div id="siteNotice">' +
         "</div>" +
-        '<h1 id="firstHeading" class="firstHeading">Mi ubi</h1>' +
+        '<h1 id="firstHeading" class="firstHeading">Ubicación</h1>' +
         '<div id="bodyContent">' +
-        'aquí estoy'+
+        'Mi ubicación actual'+
         "</div>" +
         "</div>";
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
     });
     const marker = new google.maps.Marker({
-        position: uluru,
+        position: ubi,
         map,
         title: "Mi ubicación",
     });
