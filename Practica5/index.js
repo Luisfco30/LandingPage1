@@ -2,8 +2,8 @@ function initMap() {
     let latitude
     let longitude
     navigator.geolocation.getCurrentPosition(x => {
-        latitude = x.coords.latitude
-        longitude = x.coords.longitude
+        latitude = x.coords.latitude.toString()
+        longitude = x.coords.longitude.toString()
     })
     const uluru = { lat:latitude, lng:longitude };
     const map = new google.maps.Map(document.getElementById("map"), {
