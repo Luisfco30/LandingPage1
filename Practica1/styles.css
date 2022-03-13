@@ -43,3 +43,6 @@
 #quienesSomos, .size{
     padding: 5% !important;
 }
+.contefect{
+    overflow: hidden;
+}
