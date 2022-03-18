@@ -17,4 +17,20 @@ function initMap() {
         map: map,
         icon: iconBase + 'parking_lot_maps.png'
     });
+    if(navigator.geolocation){
+        moverPosicion(marker)
+    }
+
+    function moverPosicion(marker){
+        navigator.geolocation.getCurrentPosition(pos=>{
+          var ps ={
+            lat:pos.coords.latitude,
+            lng:pos.coords.longitude
+          }
+          marker.setPosition(pos)
+          map.panTo(pos)
+          map.setCenter(pos)
+            
+        })
+    }
 }
