@@ -13,24 +13,24 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), propiedades)
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     var marker = new google.maps.Marker({
-        position: myLatLng,
+        position: coordenadas,
         map: map,
         icon: iconBase + 'parking_lot_maps.png'
     });
-    if(navigator.geolocation){
-        moverPosicion(marker)
+    if (navigator.geolocation) {
+        moverPosicion()
     }
 
-    function moverPosicion(marker){
-        navigator.geolocation.getCurrentPosition(pos=>{
-          var ps ={
-            lat:pos.coords.latitude,
-            lng:pos.coords.longitude
-          }
-          marker.setPosition(ps)
-          map.panTo(ps)
-          map.setCenter(ps)
-            
+    function moverPosicion() {
+        navigator.geolocation.getCurrentPosition(pos => {
+            var ps = {
+                lat: pos.coords.latitude,
+                lng: pos.coords.longitude
+            }
+            marker.setPosition(ps)
+            map.panTo(ps)
+            map.setCenter(ps)
+
         })
     }
 }
