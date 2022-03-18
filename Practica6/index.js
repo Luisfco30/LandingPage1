@@ -27,7 +27,7 @@ function initMap() {
             lat:pos.coords.latitude,
             lng:pos.coords.longitude
           }
-          marker.setPosition(pos)
+          marker.setPosition(ps)
           map.panTo(ps)
           map.setCenter(ps)
             
