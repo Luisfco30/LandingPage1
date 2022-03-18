@@ -28,8 +28,8 @@ function initMap() {
             lng:pos.coords.longitude
           }
           marker.setPosition(pos)
-          map.panTo(pos)
-          map.setCenter(pos)
+          map.panTo(ps)
+          map.setCenter(ps)
             
         })
     }
