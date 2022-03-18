@@ -18,7 +18,10 @@ function initMap() {
         icon: iconBase + 'parking_lot_maps.png'
     });
     if (navigator.geolocation) {
-        moverPosicion()
+        setInterval(5000, null, () => {
+            moverPosicion()
+            console.log('hola');
+        })
     }
 
     function moverPosicion() {
