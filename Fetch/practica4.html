@@ -46,7 +46,7 @@
             fetch("paises.json")
                 .then((response) => {
                     response.json().then((datos) => {
-                        const map = document.getElementById('map', propiedades)
+                        const map = new google.maps.Map( document.getElementById('map'),propiedades)
                         datos.forEach(marcador => {
                             var info = "<strong>Pais:</strong>" + marcador.CountryName
                             var infowindow = new google.maps.InfoWindow({
@@ -61,8 +61,6 @@
                                 infowindow.open(map, marker)
                             })
                         })
-                    }).catch(function (error) {
-                        console.log('hay un error');
                     })
                 })
         }
@@ -73,7 +71,7 @@
         </script>
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa" async defer></script>
 </body>
 
 </html>
