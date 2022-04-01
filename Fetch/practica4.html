@@ -57,7 +57,7 @@
                                 position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
                                 title: marcador.CountryName
                             })
-                            marker.addListener('click', function* () {
+                            marker.addListener('click', function() {
                                 infowindow.open(map, marker)
                             })
                         })
