@@ -6,6 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .div{
+            text-align: center; 
+            margin: 20px auto;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        body{
+            background-color: gray;
+            
+        }
+        #paises{
+            height: 100%;
+        }
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +47,8 @@
                     console.log(datos);
                     datos.forEach(x => {
                         console.log(x);
-                        let nombre = document.createElement("p")
+                        let nombre = document.createElement("div")
+                        nombre.className='div'
                         nombre.textContent = `Pais: ${x.country}, Casos: ${x.cases}`
                         paises.appendChild(nombre)
                     });
